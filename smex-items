@@ -1,0 +1,54 @@
+
+;; ----- smex-history -----
+(
+ split-window-below
+ magit-push
+ magit-tag
+ eshell
+ magit-log
+ shell
+ compile
+)
+
+;; ----- smex-data -----
+(
+ (find-name-dired . 7)
+ (find-grep-dired . 50)
+ (occur . 20)
+ (ggtags-find-tag-dwim . 47)
+ (revert-buffer . 17)
+ (list-packages . 13)
+ (magit-log . 22)
+ (magit-status . 11)
+ (magit-blame . 17)
+ (magit-blame-quit . 12)
+ (magit-blame-echo . 1)
+ (magit-show-commit . 1)
+ (magit-pull . 6)
+ (magit-fetch . 1)
+ (ggtags-find-definition . 3)
+ (find-file-in-project . 27)
+ (find-file-in-project-by-selected . 3)
+ (magit-diff . 6)
+ (describe-variable . 1)
+ (describe-function . 1)
+ (split-window-below . 6)
+ (split-window-right . 6)
+ (package-install-selected-packages . 1)
+ (windmove-left . 1)
+ (magit-pull-from-upstream . 1)
+ (magit-checkout . 1)
+ (sort-lines . 1)
+ (toggle-word-wrap . 1)
+ (customize-option . 1)
+ (doctor . 1)
+ (magit-stage . 2)
+ (magit-commit . 11)
+ (magit-stage-modified . 11)
+ (magit-push . 9)
+ (info . 11)
+ (compile . 2)
+ (shell . 2)
+ (eshell . 3)
+ (magit-tag . 1)
+)
