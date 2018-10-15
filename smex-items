@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
- split-window-below
+ magit-status
  magit-push
+ comment-line
+ magit-pull
+ split-window-right
+ split-window-below
  magit-tag
- eshell
- magit-log
- shell
- compile
 )
 
 ;; ----- smex-data -----
@@ -19,12 +19,12 @@
  (revert-buffer . 17)
  (list-packages . 13)
  (magit-log . 22)
- (magit-status . 11)
+ (magit-status . 12)
  (magit-blame . 17)
  (magit-blame-quit . 12)
  (magit-blame-echo . 1)
  (magit-show-commit . 1)
- (magit-pull . 6)
+ (magit-pull . 8)
  (magit-fetch . 1)
  (ggtags-find-definition . 3)
  (find-file-in-project . 27)
@@ -32,8 +32,8 @@
  (magit-diff . 6)
  (describe-variable . 1)
  (describe-function . 1)
- (split-window-below . 6)
- (split-window-right . 6)
+ (split-window-below . 7)
+ (split-window-right . 7)
  (package-install-selected-packages . 1)
  (windmove-left . 1)
  (magit-pull-from-upstream . 1)
@@ -45,10 +45,11 @@
  (magit-stage . 2)
  (magit-commit . 11)
  (magit-stage-modified . 11)
- (magit-push . 9)
+ (magit-push . 10)
  (info . 11)
  (compile . 2)
  (shell . 2)
  (eshell . 3)
  (magit-tag . 1)
+ (comment-line . 1)
 )
