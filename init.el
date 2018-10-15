@@ -17,7 +17,8 @@
 
 (setq inhibit-splash-screen t)
 
-
+(defconst *is-a-mac* (eq system-type 'darwin))
+(when *is-a-mac*
 ;;start mac设置剪切板共享
 (defun copy-from-osx ()
 (shell-command-to-string "pbpaste"))
@@ -29,6 +30,7 @@
 (setq interprogram-cut-function 'paste-to-osx)
 (setq interprogram-paste-function 'copy-from-osx)
 ;;end 设置剪切板共享
+)
 
 ;; Enable transient mark mode
 (transient-mark-mode 1)
