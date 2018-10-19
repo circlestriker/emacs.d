@@ -7,7 +7,7 @@
 ;; Disable the splash screen (to enable it agin, replace the t with 0)
 
 (recentf-mode 1)
-(setq recentf-max-menu-items 50)
+(setq recentf-max-menu-items 500)
 (global-set-key "\C-x\ \C-r" 'recentf-open-files)
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
@@ -62,6 +62,7 @@
 
 (require 'ido)
 (setq ido-enable-flex-matching t)
+(setq ido-use-filename-at-point 'guess)
 (setq ido-everywhere t)
 (ido-mode 1)
 
