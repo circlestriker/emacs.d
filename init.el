@@ -9,6 +9,7 @@
 (recentf-mode 1)
 (setq recentf-max-menu-items 500)
 (global-set-key "\C-x\ \C-r" 'recentf-open-files)
+(run-at-time nil (* 5 60) 'recentf-save-list)
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
@@ -52,7 +53,7 @@
  '(custom-enabled-themes (quote (tango-dark)))
  '(package-selected-packages
    (quote
-    (vue-mode sicp geben window-numbering window-number find-file-in-project magit smex ggtags flymake-php flymake-easy auto-complete php-mode evil ## undo-tree))))
+    (web-mode vue-mode sicp geben window-numbering window-number find-file-in-project magit smex ggtags flymake-php flymake-easy auto-complete php-mode evil ## undo-tree))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -128,7 +129,7 @@
 
 (which-function-mode 1)
 
-(setq ffip-project-root "/Users/win/wj/wx-admin-platform/app")
+;;(setq ffip-project-root "/Users/win/wj/wx-admin-platform/app")
 
 (require 'window-number)
 (window-number-mode 1)
@@ -138,3 +139,6 @@
 (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
 
 (setq make-backup-files nil) ; stop creating backup~ files
+
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.wxml?\\'" . web-mode))
