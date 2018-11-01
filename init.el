@@ -102,6 +102,30 @@
     (evil-local-set-key 'normal "o" 'ffip-diff-find-file))
 (add-hook 'ffip-diff-mode-hook 'ffip-diff-mode-hook-setup)
 
+;; if the full path of current file is under SUBPROJECT1 or SUBPROJECT2
+;; OR if I'm reading my personal issue track document,
+(defun my-setup-develop-environment ()
+  (interactive)
+  (when (ffip-current-full-filename-match-pattern-p "\\(PROJECT_DIR\\|issue-track.org\\)")
+    ;; Though PROJECT_DIR is team's project, I care only its sub-directory "subproj1""
+    (setq-local ffip-project-root "~/projs/PROJECT_DIR/subproj1")
+    ;; well, I'm not interested in concatenated BIG js file or file in dist/
+    (setq-local ffip-find-options "-not -size +64k -not -iwholename '*/dist/*'")
+    ;; for this project, I'm only interested certain types of files
+    (setq-local ffip-patterns '("*.html" "*.js" "*.css" "*.java" "*.xml" "*.js"))
+    ;; ignore files whose name match certain glob pattern
+    (setq-local ffip-ignore-filenames '("*.bmp" "*.jpg"))
+    ;; exclude `dist/' directory
+    (add-to-list 'ffip-prune-patterns "*/dist"))
+    ;; exclude `dist/' directory
+    ;; (add-to-list 'ffip-prune-patterns "*/GPATH"))
+    ;; (add-to-list 'ffip-prune-patterns "*/GRTAGS"))
+    ;; (add-to-list 'ffip-prune-patterns "*/GTAGS"))
+  ;; insert more WHEN statements below this line for other projects
+  )
+;; most major modes inherit from prog-mode, so below line is enough
+(add-hook 'prog-mode-hook 'my-setup-develop-environment)
+
 (which-function-mode 1)
 
 (setq ffip-project-root "/Users/win/wj/wx-admin-platform/app")
