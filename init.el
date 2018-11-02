@@ -7,9 +7,9 @@
 ;; Disable the splash screen (to enable it agin, replace the t with 0)
 
 (recentf-mode 1)
-(setq recentf-max-menu-items 500)
+(setq recentf-max-saved-items 500)
 (global-set-key "\C-x\ \C-r" 'recentf-open-files)
-(run-at-time nil (* 5 60) 'recentf-save-list)
+;;(run-at-time nil (* 5 60) 'recentf-save-list)
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
