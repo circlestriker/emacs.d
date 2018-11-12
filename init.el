@@ -35,20 +35,6 @@
 (global-set-key (kbd "C-c c") 'pbcopy)
 (global-set-key (kbd "C-c v") 'pbpaste)
 (global-set-key (kbd "C-c x") 'pbcut)
-;; (defconst *is-a-mac* (eq system-type 'darwin))
-;; (when *is-a-mac*
-;; ;;start mac设置剪切板共享 ;;会导致evil p命令粘贴不准
-;; (defun copy-from-osx ()
-;; (shell-command-to-string "pbpaste"))
-;; (defun paste-to-osx (text &optional push)
-;; (let ((process-connection-type nil))
-;; (let ((proc (start-process"pbcopy" "*Messages*" "pbcopy")))
-;; (process-send-string proc text)
-;; (process-send-eof proc))))
-;; (setq interprogram-cut-function 'paste-to-osx)
-;; (setq interprogram-paste-function 'copy-from-osx)
-;; ;;end 设置剪切板共享
-;; )
 
 ;; Enable transient mark mode
 (transient-mark-mode 1)
@@ -105,10 +91,6 @@
 ;; This is your old M-x.
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
-(defun get-args-for-my-find-name-dired (dir pattern)
-  (interactive "DFind-name (directory): \nsFind-name (filename wildcard): ")
-  (list dir pattern))
-
 (defun ffip-diff-mode-hook-setup ()
     (evil-local-set-key 'normal "K" 'diff-hunk-prev)
     (evil-local-set-key 'normal "J" 'diff-hunk-next)
@@ -122,23 +104,22 @@
 ;; OR if I'm reading my personal issue track document,
 (defun my-setup-develop-environment ()
   (interactive)
-  (when (ffip-current-full-filename-match-pattern-p "\\(/Users/win/wj/wx-admin-platform\\|issue-track.org\\)")
+  (when (ffip-current-full-filename-match-pattern-p "\\(wx-admin-platform\\)")
     ;; Though PROJECT_DIR is team's project, I care only its sub-directory "subproj1""
     ;;(setq-local ffip-project-root "~/projs/PROJECT_DIR/subproj1")
     ;; well, I'm not interested in concatenated BIG js file or file in dist/
-    (setq-local ffip-find-options "-not -size +64k -not -iwholename '*/dist/*'")
+    (setq-local ffip-find-options "-not -size +64k -not -iwholename '*/database/*' -not -iwholename '*/vendor/*' -not -iwholename '*/storage/*'")
     ;; for this project, I'm only interested certain types of files
-    (setq-local ffip-patterns '("*.html" "*.js" "*.css" "*.java" "*.xml" "*.js" "*.php"))
+    (setq-local ffip-patterns '("*.html" "*.css" "*.java" "*.xml" "*.php"))
     ;; ignore files whose name match certain glob pattern
     (setq-local ffip-ignore-filenames '("*.bmp" "*.jpg"))
     ;; exclude `dist/' directory
-    (add-to-list 'ffip-prune-patterns '("*/GPATH" "*/GRTAGS" "*/GTAGS" "*/database" "*/dist" )))
-    ;; exclude `dist/' directory
-    ;; (add-to-list 'ffip-prune-patterns "*/GPATH"))
-    ;; (add-to-list 'ffip-prune-patterns "*/GRTAGS"))
-    ;; (add-to-list 'ffip-prune-patterns "*/GTAGS"))
+    (add-to-list 'ffip-prune-patterns "*/GTAGS")
+    (add-to-list 'ffip-prune-patterns "*/GRTAGS")
+    (add-to-list 'ffip-prune-patterns "*/GPATH"))
+    ;;(add-to-list 'ffip-prune-patterns '("*/GPATH" "*/GRTAGS" "*/GTAGS" "*/database" "*/dist" )))
   ;; insert more WHEN statements below this line for other projects
-  )
+)
 ;; most major modes inherit from prog-mode, so below line is enough
 (add-hook 'prog-mode-hook 'my-setup-develop-environment)
 
