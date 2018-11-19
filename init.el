@@ -57,7 +57,7 @@
  '(evil-search-module (quote evil-search))
  '(package-selected-packages
    (quote
-    (kill-ring-search projectile vue-mode window-numbering window-number find-file-in-project magit smex ggtags flymake-php flymake-easy auto-complete php-mode evil web-mode ## undo-tree)))
+    (projectile window-numbering window-number find-file-in-project magit smex ggtags flymake-php flymake-easy auto-complete php-mode evil web-mode ## undo-tree)))
  '(projectile-globally-ignored-directories
    (quote
     (".idea" ".ensime_cache" ".eunit" ".git" ".hg" ".fslckout" "_FOSSIL_" ".bzr" "_darcs" ".tox" ".svn" ".stack-work" "GPATH" "GRTAGS" "GTAGS" "storage/framework"))))
@@ -148,3 +148,5 @@
  "Search the kill ring in the minibuffer."
  (interactive))
 (global-set-key "\M-\C-y" 'kill-ring-search)
+
+(set-face-attribute 'mode-line nil :font "DejaVu Sans Mono-10")
