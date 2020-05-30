@@ -53,14 +53,19 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   ["#212526" "#ff4b4b" "#b4fa70" "#fce94f" "#729fcf" "#e090d7" "#8cc4ff" "#eeeeec"])
  '(custom-enabled-themes (quote (tango-dark)))
  '(evil-search-module (quote evil-search))
  '(package-selected-packages
    (quote
-    (kill-ring-search projectile vue-mode window-numbering window-number find-file-in-project magit smex ggtags flymake-php flymake-easy auto-complete php-mode evil web-mode ## undo-tree)))
+    (projectile window-numbering window-number find-file-in-project magit smex ggtags flymake-php flymake-easy auto-complete php-mode evil web-mode ## undo-tree)))
  '(projectile-globally-ignored-directories
    (quote
-    (".idea" ".ensime_cache" ".eunit" ".git" ".hg" ".fslckout" "_FOSSIL_" ".bzr" "_darcs" ".tox" ".svn" ".stack-work" "GPATH" "GRTAGS" "GTAGS" "storage/framework"))))
+    (".idea" ".ensime_cache" ".eunit" ".git" ".hg" ".fslckout" "_FOSSIL_" ".bzr" "_darcs" ".tox" ".svn" ".stack-work" "GPATH" "GRTAGS" "GTAGS" "storage/framework" "static" "vendor" "node_modules"))))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -75,7 +80,8 @@
 (ido-mode 1)
 
 ;;(global-visual-line-mode t)
-;;(global-linum-mode 1)
+;;(global-linum-mode 1) ;;left side num
+;;(line-number-mode 0) ;;mode-line
 
 (ac-config-default)
 
@@ -148,3 +154,8 @@
  "Search the kill ring in the minibuffer."
  (interactive))
 (global-set-key "\M-\C-y" 'kill-ring-search)
+
+(set-face-attribute 'mode-line nil :font "DejaVu Sans Mono-10")
+
+(require 'diminish)
+(diminish 'projectile-mode)

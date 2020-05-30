@@ -1,4 +1,6 @@
 /url/cache
+/elpa
+/elpa-*
 /.emacs.desktop
 /auto-save-list
 /network-security.data
