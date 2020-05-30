@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
- query-replace
  magit-status
+ magit-push-current-to-upstream
  magit-pull-from-upstream
- magit-pull
+ split-window-right
  magit-checkout
- magit-push
- recover-this-file
+ magit-log-all
+ magit-diff
 )
 
 ;; ----- smex-data -----
@@ -18,10 +18,10 @@
  (ggtags-find-tag-dwim . 47)
  (revert-buffer . 18)
  (list-packages . 16)
- (magit-log . 58)
- (magit-status . 19)
- (magit-blame . 19)
- (magit-blame-quit . 14)
+ (magit-log . 65)
+ (magit-status . 97)
+ (magit-blame . 20)
+ (magit-blame-quit . 15)
  (magit-blame-echo . 1)
  (magit-show-commit . 1)
  (magit-pull . 18)
@@ -29,15 +29,15 @@
  (ggtags-find-definition . 3)
  (find-file-in-project . 31)
  (find-file-in-project-by-selected . 4)
- (magit-diff . 8)
+ (magit-diff . 9)
  (describe-variable . 1)
  (describe-function . 1)
  (split-window-below . 9)
- (split-window-right . 10)
+ (split-window-right . 15)
  (package-install-selected-packages . 1)
  (windmove-left . 1)
- (magit-pull-from-upstream . 3)
- (magit-checkout . 2)
+ (magit-pull-from-upstream . 55)
+ (magit-checkout . 3)
  (sort-lines . 1)
  (toggle-word-wrap . 1)
  (customize-option . 1)
@@ -51,7 +51,7 @@
  (shell . 2)
  (eshell . 5)
  (magit-tag . 6)
- (comment-line . 1)
+ (comment-line . 3)
  (rename-file . 4)
  (find-file . 1)
  (ido-up-directory . 1)
@@ -66,7 +66,15 @@
  (copy-file . 1)
  (tetris . 1)
  (magit-push-tag . 1)
- (magit-log-buffer-file . 1)
+ (magit-log-buffer-file . 2)
  (recover-this-file . 2)
  (query-replace . 4)
+ (ffip . 9)
+ (replace-string . 1)
+ (magit-push-current-to-upstream . 56)
+ (comment-region . 10)
+ (imenu . 1)
+ (linum-mode . 5)
+ (magit-log-current . 3)
+ (magit-log-all . 1)
 )
