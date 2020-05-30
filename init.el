@@ -75,7 +75,7 @@
 (ido-mode 1)
 
 ;;(global-visual-line-mode t)
-(global-linum-mode 1)
+;;(global-linum-mode 1)
 
 (ac-config-default)
 
